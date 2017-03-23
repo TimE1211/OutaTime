@@ -81,13 +81,16 @@
                                 <state key="normal" title="SET DESTINATION TIME"/>
                                 <connections>
                                     <action selector="setDestinationTimeTappedWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XSv-5Y-Z7K"/>
-                                    <segue destination="E1Z-6W-dpK" kind="show" id="7UC-Ac-VAc"/>
+                                    <segue destination="E1Z-6W-dpK" kind="presentation" id="7UC-Ac-VAc"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bRd-bs-xq0">
                                 <rect key="frame" x="144.66666666666669" y="583" width="124.00000000000006" height="35"/>
                                 <fontDescription key="fontDescription" name="Digital-7" family="Digital-7" pointSize="25"/>
                                 <state key="normal" title="TRAVEL BACK"/>
+                                <connections>
+                                    <action selector="travelBackTappedWithSender:" destination="BYZ-38-t0r" eventType="touchUpInside" id="J1I-28-0RM"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -138,21 +141,34 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <datePicker contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="Acz-sS-YUn">
-                                <rect key="frame" x="0.0" y="250" width="414" height="216"/>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="Acz-sS-YUn">
+                                <rect key="frame" x="0.0" y="260" width="414" height="216"/>
                                 <date key="date" timeIntervalSinceReferenceDate="511825637.795573">
                                     <!--2017-03-21 21:47:17 +0000-->
                                 </date>
                             </datePicker>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uKw-ZG-T0d">
+                                <rect key="frame" x="186.33333333333334" y="571" width="42" height="40"/>
+                                <fontDescription key="fontDescription" name="Digital-7" family="Digital-7" pointSize="30"/>
+                                <state key="normal" title="Set"/>
+                                <connections>
+                                    <action selector="setTappedWithSender:" destination="E1Z-6W-dpK" eventType="touchUpInside" id="o4i-ZZ-6m5"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Acz-sS-YUn" firstAttribute="width" secondItem="JyS-aX-YiP" secondAttribute="width" id="6Ip-qk-eBB"/>
+                            <constraint firstItem="Ncx-Xz-xQf" firstAttribute="top" secondItem="uKw-ZG-T0d" secondAttribute="bottom" constant="125" id="Kpn-vX-p3A"/>
+                            <constraint firstItem="uKw-ZG-T0d" firstAttribute="centerX" secondItem="JyS-aX-YiP" secondAttribute="centerX" id="Qab-u9-aA8"/>
                             <constraint firstItem="Acz-sS-YUn" firstAttribute="centerX" secondItem="JyS-aX-YiP" secondAttribute="centerX" id="VmL-Ls-3Zc"/>
                             <constraint firstItem="Acz-sS-YUn" firstAttribute="width" secondItem="JyS-aX-YiP" secondAttribute="height" multiplier="9:16" id="ZBT-Kb-0JF"/>
                             <constraint firstItem="Acz-sS-YUn" firstAttribute="centerY" secondItem="JyS-aX-YiP" secondAttribute="centerY" id="aCV-On-EE0"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="datePicker" destination="Acz-sS-YUn" id="0i0-hv-3Un"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FnH-EF-S9g" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -161,6 +177,7 @@
         <!--Navigation Controller-->
         <scene sceneID="zaF-YS-Wxk">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IeV-2e-tOb" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="sSi-9H-WCS" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="ezn-2w-ZiV">
@@ -172,7 +189,6 @@
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="XlG-8Z-LC1"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="IeV-2e-tOb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="136.23188405797103" y="138.58695652173915"/>
         </scene>
